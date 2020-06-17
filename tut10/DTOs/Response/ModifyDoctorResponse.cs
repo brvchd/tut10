@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace tut10.Models
+namespace tut10.DTOs.Response
 {
-    public class Doctor
+    public class ModifyDoctorResponse
     {
-        public int IdDoctor { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public virtual ICollection<Prescription> Prescriptions  { get; set; }
     }
 }

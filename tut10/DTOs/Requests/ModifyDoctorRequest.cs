@@ -4,15 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace tut10.Models
+namespace tut10.DTOs.Requests
 {
-    public class Patient
+    public class ModifyDoctorRequest
     {
-        public int IdPatient { get; set; }
+        [Required]
+        public int IdDoctor { get; set; }
+        [MaxLength(100)]
         public string FirstName { get; set; }
+        [MaxLength(100)]
         public string LastName { get; set; }
-        public DateTime BirthDate { get; set; }
-        public virtual ICollection<Prescription> Prescriptions{ get; set; }
-
+        [MaxLength(100)]
+        public string Email { get; set; }
     }
 }

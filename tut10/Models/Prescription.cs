@@ -9,13 +9,13 @@ namespace tut10.Models
 {
     public class Prescription
     {
-        [Key]
         public int IdPrescription { get; set; }
         public DateTime Date { get; set; }
         public DateTime DueDate { get; set; }
         public int IdPatient { get; set; }
         public virtual Patient Patient { get; set; }
-        public int Id { get; set; }
+        public int IdDoctor { get; set; }
         public virtual Doctor Doctor { get; set; }
+        public ICollection<PrescriptionMedicament> PrescriptionMedicaments { get; set; }
     }
 }
