@@ -128,7 +128,7 @@ namespace tut10.Models
         {
             modelBuilder.Entity<Patient>().HasData(
                 new Patient() { IdPatient = 1, FirstName = "Alex", LastName = "Miller", BirthDate = Convert.ToDateTime("2001-02-01") },
-                new Patient() { IdPatient = 2, FirstName = "Vladyslav", LastName = "Kutsenko", BirthDate = Convert.ToDateTime("2010-13-11") },
+                new Patient() { IdPatient = 2, FirstName = "Vladyslav", LastName = "Kutsenko", BirthDate = Convert.ToDateTime("2010-11-13") },
                 new Patient() { IdPatient = 3, FirstName = "Radyslav", LastName = "Burylko", BirthDate = Convert.ToDateTime("2000-01-01") }
                 );
 

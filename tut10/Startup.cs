@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using tut10.Models;
 using tut10.Services;
 
 namespace tut10
@@ -26,7 +28,11 @@ namespace tut10
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IClinicDbService, ClinicDbService>();
+            services.AddScoped<IClinicDbService, ClinicDbService>();
+            services.AddDbContext<PrescriptionDbContext>(opt =>
+            {
+                opt.UseSqlServer("Data Source=db-mssql;Initial Catalog=s18963;Integrated Security=True");
+            });
             services.AddControllers();
         }
 
