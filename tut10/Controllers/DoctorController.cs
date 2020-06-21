@@ -64,7 +64,7 @@ namespace tut10.Controllers
             }
         }
 
-        [HttpPost("{id}")]
+        [HttpPut("{id}")]
         public IActionResult ModifyDoctor(ModifyDoctorRequest request)
         {
             try
